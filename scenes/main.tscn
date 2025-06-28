@@ -1,0 +1,453 @@
+[gd_scene load_steps=44 format=3 uid="uid://iw6rnns88k30"]
+
+[ext_resource type="PackedScene" uid="uid://b84xdaacfywpv" path="res://scenes/world_map.tscn" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://d4m1tn1o4h0bo" path="res://scenes/ship_player.tscn" id="2_0wfyh"]
+[ext_resource type="Texture2D" uid="uid://co0oclgfg21hs" path="res://assets/world/textures/Fence.png" id="2_choun"]
+[ext_resource type="Script" uid="uid://bhv4icq34ujj" path="res://scripts/ship_player.gd" id="3_sugp2"]
+[ext_resource type="Texture2D" uid="uid://bgwjujkcaqt68" path="res://assets/world/textures/turret.png" id="3_ya4ey"]
+[ext_resource type="Texture2D" uid="uid://c07hc4k0l0vk" path="res://assets/world/textures/light cone-export.png" id="4_eb6dy"]
+[ext_resource type="Script" uid="uid://cqmmpbh12q6y8" path="res://scripts/camera_3d.gd" id="4_jyhfs"]
+[ext_resource type="FontFile" uid="uid://shkcamjkl2ok" path="res://assets/UI/DepartureMono-Regular.otf" id="5_85g3d"]
+[ext_resource type="Script" uid="uid://svfo725m4cvl" path="res://scripts/label.gd" id="5_tbgi4"]
+[ext_resource type="Texture2D" uid="uid://6e23m6f6keed" path="res://assets/UI/thrust bar under.png" id="6_o6xl0"]
+[ext_resource type="Texture2D" uid="uid://8x4f70av356o" path="res://assets/UI/thrust bar over.png" id="7_tipki"]
+[ext_resource type="FontFile" uid="uid://3io1m4ixxwlh" path="res://assets/UI/Otomo Regular.ttf" id="8_tipki"]
+[ext_resource type="Script" uid="uid://bn3mwoxeug876" path="res://scenes/menu.gd" id="13_trceg"]
+
+[sub_resource type="Gradient" id="Gradient_choun"]
+offsets = PackedFloat32Array(0, 0.997076)
+colors = PackedColorArray(3.30899e-08, 0, 0.0649714, 1, 0.158042, 0.179472, 0.176928, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ya4ey"]
+noise_type = 0
+frequency = 0.0208
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_eb6dy"]
+width = 256
+height = 256
+seamless = true
+color_ramp = SubResource("Gradient_choun")
+noise = SubResource("FastNoiseLite_ya4ey")
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_trceg"]
+panorama = SubResource("NoiseTexture2D_eb6dy")
+
+[sub_resource type="Sky" id="Sky_tbgi4"]
+sky_material = SubResource("PanoramaSkyMaterial_trceg")
+
+[sub_resource type="Environment" id="Environment_tefeu"]
+background_mode = 2
+background_color = Color(0.130772, 0.130772, 0.130772, 1)
+sky = SubResource("Sky_tbgi4")
+ambient_light_source = 1
+ambient_light_energy = 0.0
+reflected_light_source = 1
+glow_enabled = true
+volumetric_fog_density = 0.02
+volumetric_fog_albedo = Color(0, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_choun"]
+transparency = 1
+albedo_texture = ExtResource("2_choun")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2f3dj"]
+transparency = 4
+albedo_texture = ExtResource("2_choun")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eb6dy"]
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("3_ya4ey")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_trceg"]
+transparency = 1
+albedo_texture = ExtResource("4_eb6dy")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a8y0u"]
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("3_ya4ey")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jbj1t"]
+transparency = 4
+albedo_texture = ExtResource("4_eb6dy")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_muem4"]
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("3_ya4ey")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dp3eg"]
+transparency = 4
+albedo_texture = ExtResource("4_eb6dy")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0ld40"]
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("3_ya4ey")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gqmmt"]
+transparency = 4
+albedo_texture = ExtResource("4_eb6dy")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yc10j"]
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("3_ya4ey")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jscy8"]
+transparency = 4
+albedo_texture = ExtResource("4_eb6dy")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pm3ni"]
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("3_ya4ey")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y6deb"]
+transparency = 4
+albedo_texture = ExtResource("4_eb6dy")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_og1vs"]
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("3_ya4ey")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2wyq8"]
+transparency = 4
+albedo_texture = ExtResource("4_eb6dy")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jkv2x"]
+transparency = 1
+cull_mode = 2
+albedo_texture = ExtResource("3_ya4ey")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vxglm"]
+transparency = 4
+albedo_texture = ExtResource("4_eb6dy")
+
+[sub_resource type="Curve3D" id="Curve3D_jyhfs"]
+closed = true
+_data = {
+"points": PackedVector3Array(2.80776, 5.84126e-05, -0.527035, -2.80776, -5.84126e-05, 0.527035, -124.284, 0.0673244, -33.3634, 3.30759, -3.05176e-05, -1.25495, -3.30759, 3.05176e-05, 1.25495, -139.187, 0.0605469, -29.4947, 0, 0, 0, 0, 0, 0, -175.987, 0.385657, -11.2921, 4.3932, 0.00424576, -2.0764, -4.3932, -0.00424576, 2.0764, -215.962, 0.090229, 6.08898, 1.27908, 0.00632858, -3.12319, -1.27908, -0.00632858, 3.12319, -224.132, 0.391315, 15.4457, 0, 0, 0, 0, 0, 0, -224.95, 0.0662003, 23.1705, 0, 0, 0, 0, 0, 0, -219.371, 0.983051, 32.2066, -4.5506, 0.014473, -7.10301, 4.5506, -0.014473, 7.10301, -200.154, 0.298843, 56.4739, -3.4953, -7.62939e-06, -0.458633, 3.4953, 7.62939e-06, 0.458633, -189.188, 1.01234, 72.9868, -3.52048, 3.43323e-05, -0.00545502, 3.52048, -3.43323e-05, 0.00545502, -179.646, 0.54623, 74.3996, 2.5524, -3.8147e-06, 2.33778, -2.5524, 3.8147e-06, -2.33778, -168.179, 1.60669, 84.8381, 0, 0, 0, 0, 0, 0, -138.972, 1.59633, 108.76, -2.07611, -3.8147e-05, -0.69899, 2.07611, 3.8147e-05, 0.69899, -108.723, 1.42472, 127.588, -3.61064, -3.8147e-06, 0.205032, 3.61064, 3.8147e-06, -0.205032, -33.3486, 1.82898, 140.042, -3.03616, 3.8147e-06, 2.11365, 3.03616, -3.8147e-06, -2.11365, -21.3751, 1.96082, 136.314, 0, 0, 0, 0, 0, 0, -5.71166, 4.44967, 117.989, -3.74032, 1.04904e-05, 1.93539, 3.74032, -1.04904e-05, -1.93539, 11.0469, 11.8842, 95.1379, -3.29985, -3.05176e-05, 1.51501, 3.29985, 3.05176e-05, -1.51501, 30.1524, 12.7188, 93.0662, -2.72742, 3.14713e-05, 1.36398, 2.72742, -3.14713e-05, -1.36398, 44.2358, 14.6674, 78.6583, -2.90078, -6.29425e-05, 0.707115, 2.90078, 6.29425e-05, -0.707115, 51.5449, 6.54621, 77.934, 0, 0, 0, 0, 0, 0, 60.2738, 4.3567, 74.1965, 0.31292, 5.72205e-05, 3.0901, -0.31292, -5.72205e-05, -3.0901, 64.9048, 1.73981, 68.5687, 1.30158, 1.52588e-05, 0.927258, -1.30158, -1.52588e-05, -0.927258, 60.3098, 0.929062, 62.7517, 1.62685, -4.57764e-05, 1.76739, -1.62685, 4.57764e-05, -1.76739, 38.4007, 0.618332, 50.4814, 0.0102272, 1.90735e-05, 4.47881, -0.0102272, -1.90735e-05, -4.47881, 20.1711, 1.14805, 23.0321, 0, 0, 0, 0, 0, 0, 24.4674, 1.06323, 15.2584, -2.15818, 2.47955e-05, 0.940426, 2.15818, -2.47955e-05, -0.940426, 32.527, 0.892456, 11.2053, -2.59421, -2.86102e-05, 2.76857, 2.59421, 2.86102e-05, -2.76857, 56.7844, 14.2316, -1.6919, 5.86102, -9.53674e-06, 4.65358, -5.86102, 9.53674e-06, -4.65358, 59.1374, 10.8215, -21.8858, 3.48947, -3.8147e-05, -0.715574, -3.48947, 3.8147e-05, 0.715574, 39.7527, 10.2922, -21.1754, 3.63633, 4.3869e-05, -2.95243, -3.63633, -4.3869e-05, 2.95243, 26.3316, 3.34509, -12.8978, 1.60037, -0.50251, -3.86119, -1.60037, 0.50251, 3.86119, 20.6141, 3.95007, -2.18697, 3.84067, -1.36813, -1.74072, -3.84067, 1.36813, 1.74072, 2.22469, 12.0971, 11.5758, 4.53104, -4.57764e-05, 2.11487, -4.53104, 4.57764e-05, -2.11487, -16.5646, 16.7228, 15.2609, 2.0315, -3.43323e-05, 1.87108, -2.0315, 3.43323e-05, -1.87108, -25.0763, 11.2391, -6.14377, 2.46313, 1.03722, 1.60429, -2.46313, -1.03722, -1.60429, -31.3156, 7.77476, -9.98001, 0.390095, -7.62939e-06, 3.94677, -0.390095, 7.62939e-06, -3.94677, -35.4957, 4.46863, -19.9429, -1.56279, 0, 4.30719, 1.56279, 0, -4.30719, -32.1161, 2.88879, -30.9764, 0.304939, 0, 3.46862, -0.304939, 0, -3.46862, -29.8409, 0.333252, -45.9516, 4.67793, -3.8147e-05, 0.141834, -4.67793, 3.8147e-05, -0.141834, -39.0152, 0.385742, -55.2186, 1.9243, 1.52588e-05, -1.76296, -1.9243, -1.52588e-05, 1.76296, -48.7153, 0.356796, -51.6642, 1.26261, -7.62939e-06, -2.3, -1.26261, 7.62939e-06, 2.3, -55.4864, 0.225471, -36.9096, 2.19717, 1.52588e-05, -1.68853, -2.19717, -1.52588e-05, 1.68853, -65.7091, 0.0805511, -20.6215, 5.20966, 7.62939e-06, -0.37286, -5.20966, -7.62939e-06, 0.37286, -78.0849, 0.0289307, -14.465, 2.96573, -5.34058e-05, 1.46697, -2.96573, 5.34058e-05, -1.46697, -92.6362, 0.0579147, -18.0102, 2.09212, 7.62939e-06, 2.37106, -2.09212, -7.62939e-06, -2.37106, -112.588, 0.164787, -29.9507, 2.66987, 5.05447e-05, 0.646889, -2.66987, -5.05447e-05, -0.646889, -117.106, 0.268138, -34.209),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 47
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jyhfs"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_tbgi4"]
+material = SubResource("StandardMaterial3D_jyhfs")
+
+[sub_resource type="LabelSettings" id="LabelSettings_jyhfs"]
+line_spacing = 1.0
+font = ExtResource("5_85g3d")
+font_size = 14
+
+[sub_resource type="LabelSettings" id="LabelSettings_85g3d"]
+font = ExtResource("8_tipki")
+font_color = Color(1, 0, 0, 1)
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 4
+shadow_color = Color(0, 0, 0, 0.972549)
+
+[sub_resource type="Theme" id="Theme_eb6dy"]
+/fonts/main_font = ExtResource("8_tipki")
+
+[node name="main" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.5, 0.706796, -0.500439, 0, 0.577858, 0.816138, 0.866025, 0.408069, -0.288929, 0, 0, 0)
+light_energy = 0.1
+shadow_enabled = true
+directional_shadow_max_distance = 90.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_tefeu")
+
+[node name="world_map" parent="." instance=ExtResource("1_o5qli")]
+
+[node name="StaticBody3D" parent="world_map/track" index="0"]
+collision_layer = 2
+collision_mask = 0
+
+[node name="walls" parent="world_map" index="1"]
+collision_layer = 4
+collision_mask = 0
+
+[node name="fence_beach" parent="world_map" index="5"]
+material_override = SubResource("StandardMaterial3D_choun")
+surface_material_override/0 = SubResource("StandardMaterial3D_2f3dj")
+
+[node name="Point" parent="world_map/street_lamp_ground" index="0"]
+transform = Transform3D(3.33333, -1.19209e-07, -1.78814e-07, 5.96046e-08, -1.78814e-07, 3.33333, -1.19209e-07, -3.33333, 0, 2.17212, 0.54969, 0.202576)
+light_specular = 0.0
+light_bake_mode = 1
+shadow_enabled = true
+
+[node name="Point_001" parent="world_map/street_lamp_ground_001" index="0"]
+transform = Transform3D(3.33333, -3.57628e-07, 5.96046e-08, 0, 5.96046e-08, 3.33333, 0, -3.33333, 0, 2.46658, 0.643242, 0.409149)
+light_specular = 0.0
+light_bake_mode = 1
+shadow_enabled = true
+
+[node name="Point_002" parent="world_map/street_lamp_ground_002" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 2.10677, 0.698311, 0.542871)
+light_specular = 0.0
+light_bake_mode = 1
+shadow_enabled = true
+
+[node name="Point_003" parent="world_map/street_lamp_ground_003" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 2.10668, 0.698309, 0.542823)
+light_specular = 0.0
+light_bake_mode = 1
+shadow_enabled = true
+
+[node name="Point_004" parent="world_map/street_lamp_ground_004" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 2.10675, 0.698313, 0.542825)
+light_specular = 0.0
+light_bake_mode = 1
+shadow_enabled = true
+
+[node name="Point_005" parent="world_map/street_lamp_ground_005" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 2.10675, 0.698295, 0.542782)
+light_specular = 0.0
+
+[node name="Point_006" parent="world_map/street_lamp_ground_006" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 2.10675, 0.698319, 0.542751)
+light_specular = 0.0
+
+[node name="Point_007" parent="world_map/street_lamp_ground_007" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 2.10677, 0.698298, 0.542778)
+light_specular = 0.0
+
+[node name="Point_008" parent="world_map/street_lamp_ground_008" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 2.10677, 0.69831, 0.542774)
+
+[node name="Point_009" parent="world_map/street_lamp_ground_009" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 2.10676, 0.698314, 0.542747)
+light_bake_mode = 1
+
+[node name="Point_010" parent="world_map/street_lamp_ground_010" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 2.10672, 0.698288, 0.542749)
+light_bake_mode = 1
+
+[node name="Point_011" parent="world_map/street_lamp_ground_011" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 2.10672, 0.698314, 0.542745)
+light_bake_mode = 1
+
+[node name="Point_012" parent="world_map/street_lamp_ground_012" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 2.10673, 0.698297, 0.542783)
+light_bake_mode = 1
+
+[node name="Point_013" parent="world_map/street_lamp_ground_013" index="0"]
+light_energy = 10.0
+light_specular = 0.0
+light_bake_mode = 1
+
+[node name="Point_014" parent="world_map/street_lamp_ground_014" index="0"]
+light_energy = 10.0
+light_specular = 0.0
+light_bake_mode = 1
+
+[node name="turret" parent="world_map" index="176"]
+surface_material_override/0 = SubResource("StandardMaterial3D_eb6dy")
+
+[node name="spotlight" parent="world_map" index="177"]
+light_energy = 10.0
+shadow_enabled = true
+
+[node name="turret_light" parent="world_map" index="178"]
+surface_material_override/2 = SubResource("StandardMaterial3D_trceg")
+
+[node name="turret_001" parent="world_map" index="179"]
+surface_material_override/0 = SubResource("StandardMaterial3D_a8y0u")
+
+[node name="spotlight_001" parent="world_map" index="180"]
+light_energy = 10.0
+shadow_enabled = true
+
+[node name="turret_light_001" parent="world_map" index="181"]
+surface_material_override/2 = SubResource("StandardMaterial3D_jbj1t")
+
+[node name="turret_002" parent="world_map" index="182"]
+surface_material_override/0 = SubResource("StandardMaterial3D_muem4")
+
+[node name="spotlight_002" parent="world_map" index="183"]
+light_energy = 10.0
+shadow_enabled = true
+
+[node name="turret_light_002" parent="world_map" index="184"]
+surface_material_override/2 = SubResource("StandardMaterial3D_dp3eg")
+
+[node name="turret_003" parent="world_map" index="185"]
+surface_material_override/0 = SubResource("StandardMaterial3D_0ld40")
+
+[node name="spotlight_003" parent="world_map" index="186"]
+light_energy = 10.0
+shadow_enabled = true
+
+[node name="turret_light_003" parent="world_map" index="187"]
+surface_material_override/2 = SubResource("StandardMaterial3D_gqmmt")
+
+[node name="turret_004" parent="world_map" index="188"]
+surface_material_override/0 = SubResource("StandardMaterial3D_yc10j")
+
+[node name="spotlight_004" parent="world_map" index="189"]
+light_energy = 10.0
+shadow_enabled = true
+
+[node name="turret_light_004" parent="world_map" index="190"]
+surface_material_override/2 = SubResource("StandardMaterial3D_jscy8")
+
+[node name="turret_005" parent="world_map" index="191"]
+surface_material_override/0 = SubResource("StandardMaterial3D_pm3ni")
+
+[node name="spotlight_005" parent="world_map" index="192"]
+light_energy = 10.0
+shadow_enabled = true
+
+[node name="turret_light_005" parent="world_map" index="193"]
+surface_material_override/2 = SubResource("StandardMaterial3D_y6deb")
+
+[node name="turret_006" parent="world_map" index="194"]
+surface_material_override/0 = SubResource("StandardMaterial3D_og1vs")
+
+[node name="spotlight_006" parent="world_map" index="195"]
+light_energy = 10.0
+shadow_enabled = true
+
+[node name="turret_light_006" parent="world_map" index="196"]
+surface_material_override/2 = SubResource("StandardMaterial3D_2wyq8")
+
+[node name="turret_007" parent="world_map" index="197"]
+surface_material_override/0 = SubResource("StandardMaterial3D_jkv2x")
+
+[node name="spotlight_007" parent="world_map" index="198"]
+light_energy = 10.0
+shadow_enabled = true
+
+[node name="turret_light_007" parent="world_map" index="199"]
+surface_material_override/2 = SubResource("StandardMaterial3D_vxglm")
+
+[node name="ship_player" parent="." node_paths=PackedStringArray("path_follower", "target_indicator", "thrust_left", "thrust_right") instance=ExtResource("2_0wfyh")]
+transform = Transform3D(0.155291, 0, -0.579556, 0, 0.6, 0, 0.579556, 0, 0.155291, -134.613, 0.289252, -31.7484)
+collision_mask = 6
+script = ExtResource("3_sugp2")
+thrust_force = 10.0
+max_speed = 30.0
+turn_speed = 3.0
+steering_sharpness = 10.0
+drag_multiplier = 25.0
+thrust_decay_rate = 600.0
+max_turn_rate = 2.0
+turn_speed_loss_factor = 0.2
+hover_height = 1.0
+hover_strength = 1.0
+tilt_angle = 20.0
+tilt_speed = 12.0
+path_follower = NodePath("../Path3D/PathFollow3D")
+target_indicator = NodePath("../Path3D/PathFollow3D/pathfollowsphere")
+follow_speed = 5.0
+thrust_left = NodePath("thrust_L")
+thrust_right = NodePath("thrust_R")
+
+[node name="RayCast3D" parent="ship_player" index="2"]
+collision_mask = 2
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-0.277767, 0.0634819, 0.958548, 0, 0.997814, -0.0660823, -0.960648, -0.0183555, -0.27716, -130.226, 0.880459, -32.9494)
+fov = 80.0
+script = ExtResource("4_jyhfs")
+follow_distance = 1.2
+follow_height = 0.2
+
+[node name="Path3D" type="Path3D" parent="."]
+curve = SubResource("Curve3D_jyhfs")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
+transform = Transform3D(0.183982, 0, -0.980158, 0, 0.997271, 0, 0.980158, 0, 0.183982, -124.284, 0.0673244, -33.3634)
+rotation_mode = 1
+use_model_front = true
+
+[node name="pathfollowsphere" type="MeshInstance3D" parent="Path3D/PathFollow3D"]
+transform = Transform3D(0.48505, 0, 0, 0, 0.48505, 0, 0, 0, 0.48505, -0.058773, 0, -12.5542)
+mesh = SubResource("SphereMesh_tbgi4")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+follow_viewport_scale = 2.0
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Stats" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 9.0
+offset_right = 102.0
+offset_bottom = 51.0
+label_settings = SubResource("LabelSettings_jyhfs")
+script = ExtResource("5_tbgi4")
+
+[node name="thrust_bar" type="TextureProgressBar" parent="CanvasLayer"]
+texture_filter = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 583.0
+offset_top = -119.0
+offset_right = 1553.0
+offset_bottom = 26.0
+grow_vertical = 0
+scale = Vector2(0.7, 0.7)
+step = 0.2
+texture_under = ExtResource("6_o6xl0")
+texture_progress = ExtResource("7_tipki")
+
+[node name="thrust_value" type="Label" parent="CanvasLayer"]
+offset_left = 926.0
+offset_top = 891.0
+offset_right = 1317.0
+offset_bottom = 914.0
+text = "100%"
+label_settings = SubResource("LabelSettings_85g3d")
+
+[node name="MenuCanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("13_trceg")
+
+[node name="Control" type="Control" parent="MenuCanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1280.0
+offset_bottom = 960.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuCanvasLayer/Control"]
+layout_mode = 0
+offset_left = 729.0
+offset_top = 478.0
+offset_right = 817.0
+offset_bottom = 518.0
+focus_mode = 2
+
+[node name="b_new_game" type="Button" parent="MenuCanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_eb6dy")
+theme_type_variation = &"FlatButton"
+text = "new game"
+
+[node name="b_effects" type="CheckButton" parent="MenuCanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+text = "test"
+
+[connection signal="pressed" from="MenuCanvasLayer/Control/VBoxContainer/b_new_game" to="MenuCanvasLayer" method="_on_button_pressed"]
+
+[editable path="world_map"]
+[editable path="ship_player"]

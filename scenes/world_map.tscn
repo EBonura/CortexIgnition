@@ -1,0 +1,49 @@
+[gd_scene load_steps=2 format=3 uid="uid://b84xdaacfywpv"]
+
+[ext_resource type="PackedScene" uid="uid://bla3c40x01fvt" path="res://assets/world/world_map.blend" id="1_oru6e"]
+
+[node name="world_map" instance=ExtResource("1_oru6e")]
+
+[node name="Point" parent="street_lamp_ground" index="0"]
+light_energy = 10.0
+
+[node name="Point_001" parent="street_lamp_ground_001" index="0"]
+light_energy = 10.0
+
+[node name="Point_002" parent="street_lamp_ground_002" index="0"]
+light_energy = 10.0
+
+[node name="Point_003" parent="street_lamp_ground_003" index="0"]
+light_energy = 10.0
+
+[node name="Point_004" parent="street_lamp_ground_004" index="0"]
+light_energy = 10.0
+
+[node name="Point_005" parent="street_lamp_ground_005" index="0"]
+light_energy = 10.0
+
+[node name="Point_006" parent="street_lamp_ground_006" index="0"]
+light_energy = 10.0
+
+[node name="Point_007" parent="street_lamp_ground_007" index="0"]
+light_energy = 10.0
+
+[node name="Point_008" parent="street_lamp_ground_008" index="0"]
+light_energy = 10.0
+light_specular = 0.0
+
+[node name="Point_009" parent="street_lamp_ground_009" index="0"]
+light_energy = 10.0
+light_specular = 0.0
+
+[node name="Point_010" parent="street_lamp_ground_010" index="0"]
+light_energy = 10.0
+light_specular = 0.0
+
+[node name="Point_011" parent="street_lamp_ground_011" index="0"]
+light_energy = 10.0
+light_specular = 0.0
+
+[node name="Point_012" parent="street_lamp_ground_012" index="0"]
+light_energy = 10.0
+light_specular = 0.0
