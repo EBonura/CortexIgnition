@@ -25,8 +25,10 @@ func _ready():
 	current_lateral_offset = base_lateral_offset
 
 func _process(delta):
+	if not is_instance_valid(target):
+		return
+
 	if GameState.current_mode == GameState.GameMode.MENU:
-		# Rotate camera around the ship
 		menu_rotation_angle += menu_rotation_speed * delta
 
 		var radius = follow_distance
@@ -41,10 +43,12 @@ func _process(delta):
 		look_at(target_pos, Vector3.UP)
 		return
 
-	# Gameplay camera logic
+	# --- Gameplay mode ---
+
 	var target_transform = target.global_transform
 	var turn_velocity = target.current_turn_velocity if target.has_method("get") else 0.0
 
+	# Accumulate turn-based offset
 	accumulated_turn += turn_velocity * turn_accumulation_rate * delta
 	if abs(turn_velocity) < 0.1:
 		accumulated_turn = lerp(accumulated_turn, 0.0, delta * turn_decay_rate)
@@ -53,15 +57,16 @@ func _process(delta):
 	var immediate_turn_offset = -turn_velocity * turn_offset_strength
 	var persistent_offset = -accumulated_turn
 	var target_offset = base_lateral_offset + persistent_offset + immediate_turn_offset
-
 	current_lateral_offset = lerp(current_lateral_offset, target_offset, delta * offset_smooth_speed)
 
+	# Final desired position (no smoothing!)
 	var desired_pos = target_transform.origin
 	desired_pos -= target_transform.basis.z * follow_distance
 	desired_pos.y += follow_height
 	desired_pos += target_transform.basis.x * current_lateral_offset
 
-	global_transform.origin = global_transform.origin.lerp(desired_pos, delta * follow_speed)
+	global_transform.origin = desired_pos
 
+	# Look ahead along ship's direction
 	var look_pos = target_transform.origin + target_transform.basis.z * look_ahead
 	look_at(look_pos, Vector3.UP)

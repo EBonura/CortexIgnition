@@ -147,10 +147,11 @@ font_size = 14
 
 [sub_resource type="LabelSettings" id="LabelSettings_85g3d"]
 font = ExtResource("8_tipki")
+font_size = 17
 font_color = Color(1, 0, 0, 1)
-outline_size = 2
+outline_size = 3
 outline_color = Color(0, 0, 0, 1)
-shadow_size = 4
+shadow_size = 5
 shadow_color = Color(0, 0, 0, 0.972549)
 
 [sub_resource type="Theme" id="Theme_eb6dy"]
@@ -252,84 +253,90 @@ light_energy = 10.0
 light_specular = 0.0
 light_bake_mode = 1
 
-[node name="turret" parent="world_map" index="176"]
+[node name="Point_015" parent="world_map/street_lamp_ground_015" index="0"]
+light_energy = 10.0
+
+[node name="Point_016" parent="world_map/street_lamp_ground_016" index="0"]
+light_energy = 10.0
+
+[node name="turret" parent="world_map" index="210"]
 surface_material_override/0 = SubResource("StandardMaterial3D_eb6dy")
 
-[node name="spotlight" parent="world_map" index="177"]
+[node name="spotlight" parent="world_map" index="211"]
 light_energy = 10.0
 shadow_enabled = true
 
-[node name="turret_light" parent="world_map" index="178"]
+[node name="turret_light" parent="world_map" index="212"]
 surface_material_override/2 = SubResource("StandardMaterial3D_trceg")
 
-[node name="turret_001" parent="world_map" index="179"]
+[node name="turret_001" parent="world_map" index="213"]
 surface_material_override/0 = SubResource("StandardMaterial3D_a8y0u")
 
-[node name="spotlight_001" parent="world_map" index="180"]
+[node name="spotlight_001" parent="world_map" index="214"]
 light_energy = 10.0
 shadow_enabled = true
 
-[node name="turret_light_001" parent="world_map" index="181"]
+[node name="turret_light_001" parent="world_map" index="215"]
 surface_material_override/2 = SubResource("StandardMaterial3D_jbj1t")
 
-[node name="turret_002" parent="world_map" index="182"]
+[node name="turret_002" parent="world_map" index="216"]
 surface_material_override/0 = SubResource("StandardMaterial3D_muem4")
 
-[node name="spotlight_002" parent="world_map" index="183"]
+[node name="spotlight_002" parent="world_map" index="217"]
 light_energy = 10.0
 shadow_enabled = true
 
-[node name="turret_light_002" parent="world_map" index="184"]
+[node name="turret_light_002" parent="world_map" index="218"]
 surface_material_override/2 = SubResource("StandardMaterial3D_dp3eg")
 
-[node name="turret_003" parent="world_map" index="185"]
+[node name="turret_003" parent="world_map" index="219"]
 surface_material_override/0 = SubResource("StandardMaterial3D_0ld40")
 
-[node name="spotlight_003" parent="world_map" index="186"]
+[node name="spotlight_003" parent="world_map" index="220"]
 light_energy = 10.0
 shadow_enabled = true
 
-[node name="turret_light_003" parent="world_map" index="187"]
+[node name="turret_light_003" parent="world_map" index="221"]
 surface_material_override/2 = SubResource("StandardMaterial3D_gqmmt")
 
-[node name="turret_004" parent="world_map" index="188"]
+[node name="turret_004" parent="world_map" index="222"]
 surface_material_override/0 = SubResource("StandardMaterial3D_yc10j")
 
-[node name="spotlight_004" parent="world_map" index="189"]
+[node name="spotlight_004" parent="world_map" index="223"]
 light_energy = 10.0
 shadow_enabled = true
 
-[node name="turret_light_004" parent="world_map" index="190"]
+[node name="turret_light_004" parent="world_map" index="224"]
 surface_material_override/2 = SubResource("StandardMaterial3D_jscy8")
 
-[node name="turret_005" parent="world_map" index="191"]
+[node name="turret_005" parent="world_map" index="225"]
 surface_material_override/0 = SubResource("StandardMaterial3D_pm3ni")
 
-[node name="spotlight_005" parent="world_map" index="192"]
+[node name="spotlight_005" parent="world_map" index="226"]
 light_energy = 10.0
 shadow_enabled = true
 
-[node name="turret_light_005" parent="world_map" index="193"]
+[node name="turret_light_005" parent="world_map" index="227"]
 surface_material_override/2 = SubResource("StandardMaterial3D_y6deb")
 
-[node name="turret_006" parent="world_map" index="194"]
+[node name="turret_006" parent="world_map" index="228"]
 surface_material_override/0 = SubResource("StandardMaterial3D_og1vs")
 
-[node name="spotlight_006" parent="world_map" index="195"]
+[node name="spotlight_006" parent="world_map" index="229"]
 light_energy = 10.0
 shadow_enabled = true
 
-[node name="turret_light_006" parent="world_map" index="196"]
+[node name="turret_light_006" parent="world_map" index="230"]
 surface_material_override/2 = SubResource("StandardMaterial3D_2wyq8")
 
-[node name="turret_007" parent="world_map" index="197"]
+[node name="turret_007" parent="world_map" index="231"]
 surface_material_override/0 = SubResource("StandardMaterial3D_jkv2x")
 
-[node name="spotlight_007" parent="world_map" index="198"]
+[node name="spotlight_007" parent="world_map" index="232"]
 light_energy = 10.0
 shadow_enabled = true
 
-[node name="turret_light_007" parent="world_map" index="199"]
+[node name="turret_light_007" parent="world_map" index="233"]
 surface_material_override/2 = SubResource("StandardMaterial3D_vxglm")
 
 [node name="ship_player" parent="." node_paths=PackedStringArray("path_follower", "target_indicator", "thrust_left", "thrust_right") instance=ExtResource("2_0wfyh")]
@@ -377,8 +384,7 @@ transform = Transform3D(0.48505, 0, 0, 0, 0.48505, 0, 0, 0, 0.48505, -0.058773, 
 mesh = SubResource("SphereMesh_tbgi4")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
-follow_viewport_scale = 2.0
+follow_viewport_enabled = true
 
 [node name="Control" type="Control" parent="CanvasLayer"]
 layout_mode = 3
@@ -402,21 +408,21 @@ texture_filter = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 583.0
-offset_top = -119.0
-offset_right = 1553.0
-offset_bottom = 26.0
+offset_left = 637.0
+offset_top = -90.0
+offset_right = 1607.0
+offset_bottom = 55.0
 grow_vertical = 0
-scale = Vector2(0.7, 0.7)
+scale = Vector2(0.5, 0.5)
 step = 0.2
 texture_under = ExtResource("6_o6xl0")
 texture_progress = ExtResource("7_tipki")
 
 [node name="thrust_value" type="Label" parent="CanvasLayer"]
-offset_left = 926.0
-offset_top = 891.0
-offset_right = 1317.0
-offset_bottom = 914.0
+offset_left = 875.0
+offset_top = 589.0
+offset_right = 1266.0
+offset_bottom = 612.0
 text = "100%"
 label_settings = SubResource("LabelSettings_85g3d")
 
@@ -426,7 +432,8 @@ script = ExtResource("13_trceg")
 [node name="Control" type="Control" parent="MenuCanvasLayer"]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 1280.0
+offset_left = -1.0
+offset_right = 1279.0
 offset_bottom = 960.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MenuCanvasLayer/Control"]

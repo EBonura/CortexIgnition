@@ -65,6 +65,8 @@ func _ready():
 
 func _physics_process(delta):
 	follow_path_mode = GameState.current_mode == GameState.GameMode.MENU
+	
+	
 #
 	if follow_path_mode:
 		if velocity.length() < follow_speed:
@@ -78,8 +80,8 @@ func _physics_process(delta):
 		thrust_bar.visible = true
 		thrust_value.visible = true
 
-	#handle_hover(delta)
-	#handle_tilt(delta)
+	handle_hover(delta)
+	handle_tilt(delta)
 	move_and_slide()
 
 func handle_input(delta):
